@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SecureBank Demo</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1e3c;
+    color: #333;
+  }
+  header {
+    background: #0b1e3c;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+  header nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+  }
+  .card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+  .card h2 {
+    margin-top: 0;
+  }
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  button {
+    width: 100%;
+    padding: 10px;
+    background: #0b1e3c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .small {
+    font-size: 12px;
+    color: gray;
+  }
+  .warning {
+    color: red;
+    font-size: 12px;
+  }
+  footer {
+    text-align: center;
+    padding: 15px;
+    background: #f1f1f1;
+    font-size: 12px;
+  }
+  .dashboard { display:none; }
+</style>
+</head>
+<body>
+<header>
+  <div><strong>SecureBank</strong></div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Support</a>
+    <a href="#">Security</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<div class="container" id="loginPage">
+  <div class="card">
+    <h2>🔒 Secure Login</h2>
+    <p class="small"> Enter your credentials below </p>
+    
+    <input type="text" id="username" placeholder="User ID / Email" />
+    <input type="password" id="password" placeholder="Password" />
+    
+    <label><input type="checkbox" /> Remember Me</label><br><br>
+    
+    <button onclick="login()">Sign In</button>
+    <p><a href="#">Forgot Password?</a></p>
+    <p><a href="#">Create Account</a></p>
+
+    <p class="small">This is a secure platform. Always verify the website URL before entering your details.</p>
+    <p class="NOTE">Do not show your password to anyone.</p>
+  </div>
+</div>
+
+<div class="container dashboard" id="dashboard">
+  <div class="card">
+    <h2>Account Overview</h2>
+    <p><strong>Account Name:</strong> Vicente Beatriz</p>
+    <p><strong>Account Type:</strong> Fixed Deposit</p>
+    <p><strong>Balance:</strong> $121,473</p>
+    <p class="warning"><strong>Status:</strong> Account Deactivated</p>
+    <p class="small">This account requires fingerprint authentication to reactivate.</p>
+    <button onclick="alert('Fingerprint verification required)">Reactivate Account</button>
+  </div>
+</div>
+
+<footer>
+  <p>Privacy Policy | Terms of Service | Security Tips</p>
+  <p>Support: support@securebank </p>
+  <p>© 2026 SecureBank </p>
+</footer>
+
+<script>
+function login() {
+  const user = document.getElementById('username').value;
+  const pass = document.getElementById('password').value;
+
+  // DEMO ONLY (no real authentication)
+  if(user === 'vicentebeatriz' && pass === 'Beatriz1212'){
+    document.getElementById('loginPage').style.display = 'none';
+    document.getElementById('dashboard').style.display = 'flex';
+  } else {
+    alert('Invalid login (Demo credentials only)');
+  }
+}
+</script>
+
+</body>
+</html></html></html></html>
